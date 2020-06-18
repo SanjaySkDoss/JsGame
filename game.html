@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-   
+
     <title>Game</title>
 </head>
 
@@ -11,14 +11,28 @@
     <h1>Hello</h1>
     <canvas id="canvas" height="600" width="800"></canvas>
     <script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, 800, 600);
-        ctx.fillStyle = 'green';
-        ctx.fillRect(350, 300-50, 100, 100);
-        ctx.fillStyle = 'yellow';
-        ctx.fillRect(400-5, 300-5, 10, 10);
+        var ballx = 0;
+        var convas;
+        var ctx;
+
+
+
+        window.onload = function () {
+            canvas = document.getElementById('canvas');
+            ctx = canvas.getContext('2d');
+            setInterval(drawEverything,20)
+          
+        }
+
+        function drawEverything() {
+            ballx += 5;
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, 800, 600);
+            ctx.fillStyle = 'green';
+            ctx.fillRect(350, 300 - 50, 100, 100);
+            ctx.fillStyle = 'yellow';
+            ctx.fillRect(ballx, 300 - 5, 10, 10);
+        }
     </script>
 </body>
 
